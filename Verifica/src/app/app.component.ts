@@ -12,7 +12,7 @@ export class AppComponent {
   v: number = 0;
 
   aggiungi(lettera: HTMLInputElement):Boolean{
-    if(this.lettera == lettera.value){
+    /*if(this.lettera == lettera.value){
       this.v++;
     }else{
       this.v=0;
@@ -23,8 +23,13 @@ export class AppComponent {
       this.lettera=lettera.value;
       this.p += this.lettera;
     }
-    
+    */
 
+    if(this.p.charAt(this.p.length-1) == lettera.value && this.p.charAt(this.p.length-2) == lettera.value || this.p=="Lettera troppe volte aggiunta"){
+      this.p="Lettera troppe volte aggiunta";
+    }else{
+      this.p += lettera.value;
+    }
     return false;
   }
 
